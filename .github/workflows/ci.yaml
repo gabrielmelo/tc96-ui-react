@@ -1,4 +1,4 @@
-name: Starter CI
+name: tc96-ui-react
 
 on:
   push:
@@ -9,21 +9,34 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
-
+      strategy:
+        matrix:
+          node-version: [20, 22]
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js 22.x
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22.x'
-        cache: 'npm'
-    - name: Delete prepare script
-      run: npm pkg delete scripts.prepare
-    - name: Install dependencies
-      run: npm install --frozen-lockfile
-    - name: Linting
-      run: npm run lint:ci
-    - name: Type Checking
-      run: npm run type-check
-    - name: Tests
-      run: npm run test:ci
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Delete prepare script
+        run: npm pkg delete scripts.prepare
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Linting
+        run: pnpm lint:ci
+
+      - name: Type Checking
+        run: pnpm type-check
+
+      - name: Tests
+        run: pnpm test:ci
