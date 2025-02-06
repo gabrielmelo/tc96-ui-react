@@ -7,7 +7,7 @@
 		"build": "tsc -b && vite build",
 		"lint": "biome check --fix .",
 		"lint:staged": "biome check --staged --fix .",
-		"lint:ci": "biome ci src",
+		"lint:ci": "biome ci",
 		"serve": "vite preview",
 		"prepare": "husky",
 		"type-check": "tsc --noEmit",
