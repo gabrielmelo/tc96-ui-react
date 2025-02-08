@@ -1,11 +1,25 @@
 {
-	"name": "tc96-ui-react",
-	"private": true,
-	"version": "0.0.0",
-	"type": "module",
+	"name": "@tc96/ui-react",
+	"private": false,
+	"version": "0.0.2",
+	"files": ["dist"],
+	"publishConfig": {
+		"access": "public"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		},
+		"./styles.css": "./dist/index.css"
+	},
 	"scripts": {
 		"dev": "storybook dev -p 6006",
-		"build": "",
+		"build": "tsup",
 		"build:storybook": "storybook build",
 		"lint": "biome check --fix .",
 		"lint:staged": "biome check --staged --fix .",
@@ -49,6 +63,7 @@
 		"globals": "^15.14.0",
 		"husky": "9.1.7",
 		"storybook": "^8.5.3",
+		"tsup": "^8.3.6",
 		"typescript": "~5.7.3",
 		"vite": "^6.1.0"
 	}

@@ -1,4 +1,4 @@
-import { withThemeByClassName } from '@storybook/addon-themes';
+import { withThemeByClassName } from '@storybook/addon-themes'
 import type { Preview, ReactRenderer } from '@storybook/react'
 
 import '@/styles/index.css'
