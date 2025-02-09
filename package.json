@@ -2,7 +2,9 @@
 	"name": "@tc96/ui-react",
 	"private": false,
 	"version": "0.0.6",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"publishConfig": {
 		"access": "public"
 	},

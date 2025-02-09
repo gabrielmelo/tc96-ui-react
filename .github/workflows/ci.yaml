@@ -27,7 +27,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Delete prepare script
-        run: npm pkg delete scripts.prepare
+        run: pnpm pkg delete scripts.prepare
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
