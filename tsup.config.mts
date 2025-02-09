@@ -1,7 +1,11 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-	entry: ['src/**/*.{ts,tsx}', '!src/**/*.stories.{ts,tsx}', 'src/styles/index.css'],
+	entry: [
+		'src/**/*.{ts,tsx}',
+		'!src/**/*.stories.{ts,tsx}',
+		'src/styles/index.css',
+	],
 	format: ['cjs', 'esm'],
 	outDir: 'dist',
 	clean: true,
