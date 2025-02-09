@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"ignore": ["node_modules", "dist", "*.md", "*.lock", "*.log"]
+		"ignore": ["node_modules", "dist", "*.md", "*.lock", "*.log", ".github"]
 	},
 	"formatter": {
 		"enabled": true,

@@ -1,7 +1,7 @@
 {
 	"name": "@tc96/ui-react",
 	"private": false,
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"files": ["dist"],
 	"publishConfig": {
 		"access": "public"
@@ -14,16 +14,17 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"import": "./dist/index.mjs",
-			"require": "./dist/index.js"
+			"require": "./dist/index.js",
+			"default": "./dist/index.mjs"
 		},
-		"./styles.css": "./dist/index.css"
+		"./styles.css": "./dist/styles/index.css"
 	},
 	"scripts": {
 		"dev": "storybook dev -p 6006",
 		"build": "tsup",
 		"build:storybook": "storybook build",
 		"lint": "biome check --fix .",
-		"lint:staged": "biome check --staged --fix .",
+		"lint:staged": "biome check --staged --fix",
 		"lint:ci": "biome ci",
 		"serve": "vite preview",
 		"prepare": "husky",
